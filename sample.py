@@ -3,10 +3,10 @@
 
 import xml.etree.cElementTree as ET  # Use cElementTree or lxml if too slow
 
-OSM_FILE = "..\..\..\Downloads\chicago-full.osm"  # Replace this with your osm file
-SAMPLE_FILE = "chicago.osm"
+OSM_FILE = "C:\Users\Andy\Downloads\los-angeles_california.osm"  # Replace this with your osm file
+SAMPLE_FILE = "la-sample.osm"
 
-k = 500 # Parameter: take every k-th top level element
+k = 1000 # Parameter: take every k-th top level element
 
 def get_element(osm_file, tags=('node', 'way', 'relation')):
     """Yield element if it is the right type of tag
