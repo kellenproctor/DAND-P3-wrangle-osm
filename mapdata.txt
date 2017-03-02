@@ -1,0 +1,39 @@
+Dear Coach,
+
+I trust you are having a pleasant day! I also hope you only have to read this once, but in case you're reviewing my submission a second time, I can guarantee that nothing in this doc has changed.
+
+Map Area:
+Los Angeles, California, United States of America
+Earth, the Solar System, the Galaxy
+
+Link to Los Angeles MapZen download:
+https://mapzen.com/data/metro-extracts/metro/los-angeles_california/
+
+I used the Raw OpenStreetMap dataset, OSM XML, for Los Angeles for this project, which clocked in at 455 MB compressed, and over 8 GB uncompressed. Because it was so massive (and playing along locally with the Chicago OSM dataset - 2 GB - for the courses crashed my computer), I ran the python script, which I named sample.py, provided in the Project Prep with a k of 1000, 500, and 250.
+
+Reasoning:
+I chose LA because it's home, and it was available as a city through the MapZen website. I would have liked to do Hong Kong, having spent time there, but I'm afraid I don't have enough experience with street names, or geographic description info to really audit and clean the data well. In Los Angeles, I have local expertise, and can do a much better job of designing cleaning scripts in order to parse the data more effectively.
+
+OSM Sample File Descriptions:
+los-angeles_california.osm
+Size: 8.6 GB
+Lines: 111,794,824
+Note: Not included in this repository, because it's so massive. This dataset was used to create the smaller data files below.
+
+la-sample.osm
+sample.py k value: 1000
+Size: 8.6 MB
+Lines: 110,729
+Note: This file was used to test early python data auditing and cleaning scripts.
+
+la.osm
+sample.py k value: 500
+Size: 17.4 MB
+Lines: 222,181
+Note: Used as an intermediate test of the data auditing and cleaning scripts. Not included in this repository.
+
+la-final.osm
+sample.py k value: 150
+Size: 58.0 MB
+Lines: 741,172
+Note: Final file used for auditing, cleaning, and importing into the MongoDB database. Not included in this repository, but can be added for resubmission if necessary
