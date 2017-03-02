@@ -11,6 +11,9 @@ https://mapzen.com/data/metro-extracts/metro/los-angeles_california/
 
 I used the Raw OpenStreetMap dataset, OSM XML, for Los Angeles for this project, which clocked in at 455 MB compressed, and over 8 GB uncompressed. Because it was so massive (and playing along locally with the Chicago OSM dataset - 2 GB - for the courses crashed my computer), I ran the python script, which I named sample.py, provided in the Project Prep with a k of 1000, 500, and 250.
 
+Reasoning:
+I chose LA because it's home, and it was available as a city through the MapZen website. I would have liked to do Hong Kong, having spent time there, but I'm afraid I don't have enough experience with street names, or geographic description info to really audit and clean the data well. In Los Angeles, I have local expertise, and can do a much better job of designing cleaning scripts in order to parse the data more effectively.
+
 OSM Sample File Descriptions:
 los-angeles_california.osm
 Size: 8.6 GB
