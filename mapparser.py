@@ -40,7 +40,7 @@ def test(filename):
     
 
 if __name__ == "__main__":
-    test("la-small.osm")
+    test("./data/la-small.osm")
 
 
 # assert tags == {'bounds': 1,
