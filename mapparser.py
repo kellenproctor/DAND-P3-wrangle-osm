@@ -10,28 +10,43 @@ import xml.etree.cElementTree as ET
 import pprint
 
 def count_tags(filename):
-    # YOUR CODE HERE
+    '''
+    Count the tags and the tag attributes
+    '''
     tree = ET.iterparse(filename)
     tags = {}
     for event, elem in tree:
+
+        # Check if the tag is laready in our tags dictionary
         if elem.tag in tags:
             tags[elem.tag]["count"] += 1
             attrs = attrib_dict(elem)
+
+            # Add the attributes of each tag as a separate dictionary
             for attr in attrs:
                 tags[elem.tag][attr] += 1
+        
+        #If the tag isn't in the dictionary, add it as a dictionary
         else:
             tags[elem.tag] = {}
             tags[elem.tag]["count"] = 1
             attrs = attrib_dict(elem)
+
+            # Add the attributes of each tag as a separate dictionary
             for attr in attrs:
                 tags[elem.tag][attr] = 1
     return tags
 
+
 def attrib_dict(element):
+    '''
+    return the list of attributes for each element
+    '''
     attrs = {}
     for attr in element.attrib:
         attrs[attr] = 1
     return attrs
+
 
 def test(filename):
 
