@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This is code from the OSM Case Study - Iterative Parsing Lesson. It's been modified
-to reflect working on a local environment.
+This is code from the OSM Case Study - Iterative Parsing Lesson. It's been
+modified to reflect working on a local environment.
 
 """
 
@@ -17,12 +17,13 @@ def count_tags(filename):
     tags = {}
     for event, elem in tree:
 
-        # Check if the tag is laready in our tags dictionary
+        # Check if the tag is already in our tags dictionary, increase count
+        # if it is
         if elem.tag in tags:
             tags[elem.tag]["count"] += 1
             attrs = attrib_dict(elem)
 
-            # Add the attributes of each tag as a separate dictionary
+            # Increase count of the attributes of each tag
             for attr in attrs:
                 tags[elem.tag][attr] += 1
         
