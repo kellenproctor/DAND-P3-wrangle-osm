@@ -36,7 +36,7 @@ def tag_search(filename, tagtype, search):
 def test(filename):
     #tags = tag_search("./data/la-small.osm", "tag", "addr:street")
     #pprint.pprint(tags)
-    tags = count_tags(filename, "relation")
+    tags = count_tags(filename, "node")
     print "Node Tags:"
     pprint.pprint(tags)
     print ""
@@ -47,4 +47,4 @@ def test(filename):
     
 
 if __name__ == "__main__":
-    test("../data/la-small.osm")
+    test("../data/la-final.osm")
