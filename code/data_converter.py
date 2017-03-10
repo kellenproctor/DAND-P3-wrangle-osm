@@ -36,7 +36,7 @@ def shape_element(element):
     if element.tag in ["node", "way", "relation"]:
         attr = element.attrib
         node['id'] = attr['id']
-        node['type'] = element.tag
+        node['tag_type'] = element.tag
         node['created'] = creator_dict(attr)
 
         # Node specific lat and lon list
