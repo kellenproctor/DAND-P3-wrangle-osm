@@ -2,6 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 For running queries against the MongoDB osm database la collection
+
+To run a query, navigate to this directory in your command line and run
+
+python query.py [query COMMANDS]
+
+make sure you have your DAND environment set in Conda
 """
 import sys
 
