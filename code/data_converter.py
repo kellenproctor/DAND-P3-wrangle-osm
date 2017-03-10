@@ -71,15 +71,13 @@ def shape_element(element):
                     continue
 
                 # Split k values on first colon
-                keys = tattr['k'].split(':')
+                keys = tattr['k'].strip().split(':')
                 if len(keys) > 1:
                     if keys[0] == 'addr':
                         if 'address' in node:
                             node['address'].update({keys[1]: tattr['v']})
                         else:
                             node['address'] = {keys[1]: tattr['v']}
-                    elif keys[0] == 'colour':
-                        node['color'] = tattr['v']
                     else:
                         if keys[0] in node:
 
@@ -93,6 +91,9 @@ def shape_element(element):
                         else:
                             node[keys[0]] = {keys[1]: tattr['v']}
                 else:
+                    if keys[0] == 'colour':
+                        node['color'] = tattr['v']
+                        continue
                     node[keys[0]] = tattr['v']
         return node
     else:
@@ -118,8 +119,8 @@ def test():
     # NOTE: if you are running this code on your computer, with a larger dataset, 
     # call the process_map procedure with pretty=False. The pretty=True option adds 
     # additional spaces to the output, making it significantly larger.
-    data = process_map('../data/la-small.osm')
-    pprint.pprint(data)
+    data = process_map('./data/la-small.osm')
+    #pprint.pprint(data)
 
 if __name__ == "__main__":
     test()
