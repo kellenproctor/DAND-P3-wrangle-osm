@@ -5,6 +5,7 @@ import pprint
 import re
 import codecs
 import json
+import cleaning
 """
 Description of script goes here
 """
@@ -72,7 +73,13 @@ def shape_element(element):
 
                 # Split k values on first colon
                 keys = tattr['k'].strip().split(':')
+
+                # Add values to node dictionary
                 if len(keys) > 1:
+                    # Check and update city name:
+                    if 'city' in keys[1]:
+                        tattr['v'] = cleaning.check_city(tattr['v'])
+
                     if keys[0] == 'addr':
                         if 'address' in node:
                             node['address'].update({keys[1]: tattr['v']})
