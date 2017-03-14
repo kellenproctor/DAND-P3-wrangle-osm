@@ -102,6 +102,14 @@ def shape_element(element):
                         node['color'] = tattr['v']
                         continue
                     node[keys[0]] = tattr['v']
+
+        # Check the final node dict and clean any values
+        if 'address' in node:
+            if 'street_direction_prefix' in node['address']:
+                street = cleaning.check_prefix(node)
+                node['address']['street'] = street
+                del node['address']['street_direction_prefix']
+
         return node
     else:
         return None
